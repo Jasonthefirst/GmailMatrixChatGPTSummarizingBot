@@ -80,7 +80,7 @@ class MailConnector:
             negativeQuerystring = ""
             for negativelabel in negativeLabels:
                 negativeQuerystring += f"-label:{negativelabel} "
-            result = self.service.users().messages().list(userId='me', labelIds=positiveLabels, maxResults=maxResults, q=negativeQuerystring).execute()
+            result = self.service.users().messages().list(userId='me', labelIds=positiveLabelIds, maxResults=maxResults, q=negativeQuerystring).execute()
             logging.info("get_mail finished")            
             return result
 
