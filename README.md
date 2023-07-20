@@ -20,7 +20,7 @@ To start the program, follow these steps:
 2. Install the required Python packages by running `pip install -r requirements.txt`.
 3. Copy the `credentials.json` file to the src directory of the project.
 4. Create a `.env` file in the root directory of the project with the variables found in example.env:
-5. Run the program by running `python main.py`.
+5. Run the program by running `python mailbot.py`.
 
 Note: The first time you run the program, you will be asked to authorize the Google Mail API. Follow the instructions in the terminal to authorize the API.
 
