@@ -25,11 +25,11 @@ class OpenAiConnector:
         retry_count = 0
         while retry_count < 3:
                  # combine email details and prompt
-                message = f"Sender: {email_dict['from']}\nSend Date: {email_dict['send_date']}\nSubject: {email_dict['subject']}\nBody: {email_dict['body']}\n\n{prompt}"
                 try:
                     completion = openai.ChatCompletion.create(
                         model=self.open_ai_model,
                         messages=[{"role": "user", "content": message}])
+                    break
                 except Exception as e:
                     logging.error(f"Error occurred while sending to OpenAI: {e}")
                     half_body = email_dict['body'][:len(email_dict['body'])//2]
