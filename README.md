@@ -1,6 +1,8 @@
 # Email Summarizer
 
-This project is a Python application that uses OpenAI's GPT-3 API to summarize emails and send them to a Matrix chat room. It uses the Google Mail API to retrieve emails from a Gmail account and the Matrix API to send messages to a Matrix chat room.
+This project is a Python application that uses OpenAI's GPT-3 API to summarize emails and send them to a Matrix chat room. It uses the Google Mail API to retrieve emails from a Gmail account and the Matrix API to send messages to a Matrix chat room. The mails are summarized and rated using the GPT-3 API.
+
+The project can be configured to look periodically for new mails and send the summaries depending on the importance and the configured labels. To do so, you can modify the `.env` file to include a loop that periodically retrieves new emails and sends their summaries to the Matrix chat room. You can also modify the `.env` file to adjust the rating algorithm used to rate the emails based on their importance.
 
 ## Requirements
 
