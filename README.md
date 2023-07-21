@@ -14,6 +14,14 @@ To use this application, you will need the following:
 - Save the credentials.json file in src/credentials.json
 - copy the example.env file to .env and fill in the variables
 
+## Info
+
+The bot currently seems to be working only in non encrypted matrix rooms.
+
+At first start you need to invite the bot to a new room and the bot will save this room id in a .json. If you want to change the room you need to invite the bot to the new room and delete the .json file. This means the bot currently works only for one person. If you want to use it for multiple persons you need to change the code or work with multiple bots in multiple containers. In the future it would be nice to have a bot that can be invited to multiple rooms and can be used by multiple persons by giving the bot the required files over the chat room.
+
+There are some weirdly formatted emails that won't work and the summary will be none.
+
 ## Quickstart
 
 To start the program, follow these steps:

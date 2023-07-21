@@ -139,7 +139,6 @@ class MailBot:
             logging.error(e)
             return None, None, None
 
-
     async def handle_message(self, event: MessageEvent) -> None:
         if event.sender == self.user_id:
             return
@@ -194,16 +193,22 @@ class MailBot:
     async def get_scheduled_mail(self):
         #get pickled room_id
         logging.info("get_scheduled_mail started")
-        try:
-            with open("./room_id.json", "r") as f:
-               room_id = json.load(f)
-                
-        except FileNotFoundError:
-            logging.error("room_id.json not found")
-            return
+        room_id = None
+ 
+
+          
         
         while True:
             await asyncio.sleep(30)
+            while True:      
+                if os.path.exists("./room_id.json"):
+                    with open("./room_id.json", "r") as f:
+                        room_id = json.load(f)
+                        break
+                else:
+                    logging.error("room_id.json not found")
+                    await asyncio.sleep(10)
+                    continue
             
             current_time = datetime.now().time()
 
